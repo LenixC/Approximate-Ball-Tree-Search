@@ -1,6 +1,6 @@
 # (1+ε)-Approximate Ball Tree Search
 
-An implementation of the Arya & Mount (1998) ANN relaxation applied to ball trees. The idea is simple: exact ball-tree search prunes a subtree when its closest possible point is already farther than the current best candidate. The (1+ε) relaxation prunes more aggressively — skip a subtree if even its closest point can't beat the current best *by more than a factor of (1+ε)*. The returned neighbor is guaranteed within (1+ε)·d\* of the true nearest neighbor.
+An implementation of the Arya & Mount (1998) ANN relaxation applied to ball trees. The idea is simple: exact ball-tree search prunes a subtree when its closest possible point is already farther than the current best candidate. The (1+ε) relaxation prunes more aggressively, skip a subtree if even its closest point can't beat the current best *by more than a factor of (1+ε)*. The returned neighbor is guaranteed within (1+ε)·d\* of the true nearest neighbor.
 
 This is one line of code:
 
@@ -27,7 +27,7 @@ The same trick has been standard for kd-trees since Arya & Mount; applying it ex
 
 ## Scope
 
-This is an exploration, not a proposal to use ball trees for production ANN. Ball trees don't compete with HNSW or DiskANN at scale, and the ε trick doesn't change that. The interest here is in whether the guarantee transfers cleanly and what the pruning behaviour looks like empirically — it does, and it's well-behaved.
+This is an exploration, not a proposal to use ball trees for production ANN. Ball trees don't compete with HNSW or DiskANN at scale, and the ε trick doesn't change that. The interest here is in whether the guarantee transfers cleanly and what the pruning behaviour looks like empirically, it does, and it's well-behaved.
 
 ## Reference
 
